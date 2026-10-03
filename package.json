@@ -1,6 +1,13 @@
 {
   "name": "dashboard-starter-kit-next-shadcn",
   "version": "0.1.0",
+  "description": "A modern, accessible Next.js dashboard starter kit built with shadcn/ui and Tailwind CSS",
+  "author": "Azis Maulik",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn.git"
+  },
+  "homepage": "https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn#readme",
   "private": true,
   "scripts": {
     "dev": "next dev",

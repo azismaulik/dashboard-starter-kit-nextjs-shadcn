@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dashboard Starter Kit (Next.js + shadcn/ui)
 
-## Getting Started
+A modern, highly accessible, and fully responsive Dashboard Starter Kit built with **Next.js 16 (App Router & Turbopack)**, **React 19**, **Tailwind CSS v4**, and **shadcn/ui**.
 
-First, run the development server:
+Designed as a flexible, production-ready template for SaaS products, admin portals, and web applications.
+
+🔗 **GitHub Repository**: [https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn](https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn)
+
+---
+
+## ✨ Features
+
+- **⚡ Modern Architecture**: Built on Next.js 16 App Router with Turbopack and React 19.
+- **📱 Fully Responsive**: Thoughtfully designed layouts that work seamlessly across mobile, tablet, and desktop screens.
+- **🎨 Premium Styling**: Styled with Tailwind CSS v4, modern glassmorphism, tailored gradients, and CSS variables.
+- **🌓 Dark & Light Mode**: Complete theme toggle support using `next-themes` with zero flicker.
+- **⚙️ Modular Settings Hub**:
+  - Subpages for **Profile**, **Account**, **Security**, **Notifications**, **Preferences**, and **Billing**.
+  - Single Source of Truth configuration via `config/site.ts`.
+  - Responsive horizontal tab navigation on mobile, persistent vertical sidebar on desktop.
+  - Built-in interactive confirmation dialogs (`ConfirmDialog`, `DeleteConfirmDialog`).
+- **📊 Analytics & Visualizations**: Charts powered by Recharts (area charts, status breakdowns, activity feeds).
+- **📋 Data Tables**: Advanced tables with pagination, sorting, and search powered by TanStack Table.
+- **🔍 Global Command Palette**: Quick navigation and instant search accessible via `Cmd+K` / `Ctrl+K`.
+- **♿ Accessible by Design**: Keyboard navigable with ARIA semantics powered by Base UI and Radix primitives.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn.git
+cd dashboard-starter-kit-nextjs-shadcn
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+pnpm install
+# or
+yarn install
+# or
+bun install
+```
+
+### 3. Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+├── app/
+│   ├── (auth)/                  # Authentication pages (login, register, forgot-password)
+│   ├── (dashboard)/             # Main dashboard layout and pages
+│   │   ├── dashboard/           # Overview dashboard with metrics & charts
+│   │   ├── projects/            # Project management & cards
+│   │   ├── users/               # User table with status filters
+│   │   ├── analytics/           # Analytics & reports
+│   │   ├── activity/            # Real-time activity audit log
+│   │   ├── notifications/       # User notifications
+│   │   └── settings/            # Settings module
+│   │       ├── profile/         # Personal details & avatar
+│   │       ├── account/         # Workspace info & danger zone
+│   │       ├── security/        # Password, 2FA, session revocation
+│   │       ├── notifications/   # Email & push preference toggles
+│   │       ├── preferences/     # Theme, language, timezone formats
+│   │       └── billing/         # Active plans, usage, invoices
+│   └── layout.tsx               # Root application layout
+├── components/
+│   ├── layout/                  # Sidebar, navbar, breadcrumbs, command menu
+│   ├── shared/                  # Reusable domain components (dialogs, cards, selects)
+│   └── ui/                      # Base UI primitives (buttons, cards, inputs, dialogs)
+├── config/
+│   └── site.ts                  # Centralized site configuration & navigation routes
+└── types/                       # TypeScript interfaces and types
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Customization Guide
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Centralized Navigation & Feature Flags
+All navigation items and feature toggles are defined in [`config/site.ts`](config/site.ts):
 
-## Deploy on Vercel
+```ts
+export const siteConfig = {
+  name: "Dashkit",
+  author: "Azis Maulik",
+  links: {
+    github: "https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn",
+  },
+  features: {
+    analytics: true,
+    billing: true,       // Toggle to hide/show billing across app & settings
+    notifications: true,
+    auditLog: true,
+  },
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Adding New Settings Pages
+1. Add an entry to `settingsNavConfig` in [`config/site.ts`](config/site.ts):
+   ```ts
+   {
+     title: "Integrations",
+     href: "/settings/integrations",
+     icon: Blocks,
+   }
+   ```
+2. Create the page file at `app/(dashboard)/settings/integrations/page.tsx`.
+3. The responsive settings navigation and breadcrumbs will automatically update.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📜 Scripts
+
+- `npm run dev`: Starts the Next.js development server
+- `npm run build`: Builds the production bundle
+- `npm run start`: Runs the built production application
+- `npm run lint`: Runs ESLint checks
+
+---
+
+## 📄 License
+
+MIT License. Free to use for personal and commercial projects.

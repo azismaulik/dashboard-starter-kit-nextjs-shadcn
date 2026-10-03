@@ -9,6 +9,7 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card"
+import { DeleteConfirmDialog } from "@/components/shared/confirm-dialog"
 import { toast } from "sonner"
 
 export default function AccountPage() {
@@ -71,15 +72,22 @@ export default function AccountPage() {
                 Permanently delete your account and all associated data.
               </p>
             </div>
-            <Button
-              variant="destructive"
-              size="sm"
-              className="w-full sm:w-auto shrink-0"
-              id="delete-account-button"
-              onClick={() => toast.error("Account deletion requires confirmation")}
-            >
-              Delete account
-            </Button>
+            <DeleteConfirmDialog
+              resourceName="your account and workspace data"
+              trigger={
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  className="w-full sm:w-auto shrink-0"
+                  id="delete-account-button"
+                >
+                  Delete account
+                </Button>
+              }
+              onConfirm={async () => {
+                toast.success("Account deletion request submitted.")
+              }}
+            />
           </div>
         </CardContent>
       </Card>

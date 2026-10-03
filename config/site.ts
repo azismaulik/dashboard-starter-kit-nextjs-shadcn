@@ -14,16 +14,16 @@ import {
   Bell as BellIcon,
   SlidersHorizontal,
 } from "lucide-react"
-import type { NavGroup } from "@/types"
+import type { NavGroup, NavItem } from "@/types"
 
 export const siteConfig = {
   name: "Dashkit",
   description: "A modern, accessible Next.js dashboard starter kit built with shadcn/ui and Tailwind CSS",
   url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   ogImage: "https://dashkit.dev/og.jpg",
-  author: "Dashkit Team",
+  author: "Azis Maulik",
   links: {
-    github: "https://github.com",
+    github: "https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn",
     docs: "/docs",
   },
   features: {
@@ -35,7 +35,39 @@ export const siteConfig = {
   },
 } as const
 
-export type SiteConfig = typeof siteConfig
+export const settingsNavConfig: NavItem[] = [
+  {
+    title: "Profile",
+    href: "/settings/profile",
+    icon: UserCog,
+  },
+  {
+    title: "Account",
+    href: "/settings/account",
+    icon: UserCircle,
+  },
+  {
+    title: "Security",
+    href: "/settings/security",
+    icon: Shield,
+  },
+  {
+    title: "Notifications",
+    href: "/settings/notifications",
+    icon: BellIcon,
+  },
+  {
+    title: "Preferences",
+    href: "/settings/preferences",
+    icon: SlidersHorizontal,
+  },
+  {
+    title: "Billing",
+    href: "/settings/billing",
+    icon: CreditCard,
+    disabled: !siteConfig.features.billing,
+  },
+]
 
 export const navConfig: NavGroup[] = [
   {
@@ -93,39 +125,7 @@ export const navConfig: NavGroup[] = [
         title: "Settings",
         href: "/settings",
         icon: Settings,
-        children: [
-          {
-            title: "Profile",
-            href: "/settings/profile",
-            icon: UserCog,
-          },
-          {
-            title: "Account",
-            href: "/settings/account",
-            icon: UserCircle,
-          },
-          {
-            title: "Security",
-            href: "/settings/security",
-            icon: Shield,
-          },
-          {
-            title: "Notifications",
-            href: "/settings/notifications",
-            icon: BellIcon,
-          },
-          {
-            title: "Preferences",
-            href: "/settings/preferences",
-            icon: SlidersHorizontal,
-          },
-          {
-            title: "Billing",
-            href: "/settings/billing",
-            icon: CreditCard,
-            disabled: !siteConfig.features.billing,
-          },
-        ],
+        children: settingsNavConfig,
       },
     ],
   },

@@ -10,6 +10,7 @@ import {
   CardContent,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { ConfirmDialog } from "@/components/shared/confirm-dialog"
 import { toast } from "sonner"
 import { Shield, Smartphone, Monitor, Globe, Trash2 } from "lucide-react"
 
@@ -165,16 +166,26 @@ export default function SecurityPage() {
           ))}
 
           <div className="pt-1">
-            <Button
-              variant="outline"
-              size="sm"
-              className="w-full sm:w-auto text-destructive hover:bg-destructive/10 hover:text-destructive"
-              id="revoke-all-sessions-button"
-              onClick={() => toast.success("All other sessions revoked")}
-            >
-              <Trash2 className="size-4 mr-1.5" />
-              Revoke all other sessions
-            </Button>
+            <ConfirmDialog
+              title="Revoke all other sessions?"
+              description="You will be signed out of all devices and active browsers except this current session."
+              confirmLabel="Revoke all"
+              variant="destructive"
+              onConfirm={async () => {
+                toast.success("All other sessions revoked")
+              }}
+              trigger={
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full sm:w-auto text-destructive hover:bg-destructive/10 hover:text-destructive"
+                  id="revoke-all-sessions-button"
+                >
+                  <Trash2 className="size-4 mr-1.5" />
+                  Revoke all other sessions
+                </Button>
+              }
+            />
           </div>
         </CardContent>
       </Card>
