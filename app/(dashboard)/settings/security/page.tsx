@@ -76,6 +76,7 @@ export default function SecurityPage() {
             </div>
             <Button
               size="sm"
+              className="w-full sm:w-auto"
               id="update-password-button"
               onClick={() => toast.success("Password updated successfully.")}
             >
@@ -94,9 +95,9 @@ export default function SecurityPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center justify-between rounded-lg border border-border p-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-lg border border-border p-4">
             <div className="flex items-center gap-3">
-              <div className="flex size-9 items-center justify-center rounded-full bg-muted">
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-muted">
                 <Shield className="size-4 text-muted-foreground" />
               </div>
               <div>
@@ -107,6 +108,7 @@ export default function SecurityPage() {
             <Button
               variant="outline"
               size="sm"
+              className="w-full sm:w-auto shrink-0"
               id="setup-2fa-button"
               onClick={() => toast.info("2FA setup would start here")}
             >
@@ -128,22 +130,22 @@ export default function SecurityPage() {
           {activeSessions.map((session) => (
             <div
               key={session.id}
-              className="flex items-center justify-between rounded-lg border border-border p-3"
+              className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-lg border border-border p-3"
             >
-              <div className="flex items-center gap-3">
-                <div className="flex size-8 items-center justify-center rounded-md bg-muted">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="flex size-8 shrink-0 items-center justify-center rounded-md bg-muted">
                   <session.icon className="size-4 text-muted-foreground" />
                 </div>
-                <div>
-                  <p className="text-sm font-medium">
-                    {session.device}
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <p className="text-sm font-medium">{session.device}</p>
                     {session.current && (
-                      <span className="ml-2 rounded-full bg-emerald-100 px-1.5 py-0.5 text-[10px] font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+                      <span className="rounded-full bg-emerald-100 px-1.5 py-0.5 text-[10px] font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
                         Current
                       </span>
                     )}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
+                  </div>
+                  <p className="text-xs text-muted-foreground truncate">
                     {session.browser} · {session.location} · {session.lastActive}
                   </p>
                 </div>
@@ -152,7 +154,7 @@ export default function SecurityPage() {
                 <Button
                   variant="ghost"
                   size="xs"
-                  className="text-destructive hover:bg-destructive/10 hover:text-destructive"
+                  className="w-full sm:w-auto shrink-0 text-destructive hover:bg-destructive/10 hover:text-destructive justify-center"
                   onClick={() => toast.success("Session revoked")}
                   aria-label={`Revoke session on ${session.device}`}
                 >
@@ -166,11 +168,11 @@ export default function SecurityPage() {
             <Button
               variant="outline"
               size="sm"
-              className="text-destructive hover:bg-destructive/10 hover:text-destructive"
+              className="w-full sm:w-auto text-destructive hover:bg-destructive/10 hover:text-destructive"
               id="revoke-all-sessions-button"
               onClick={() => toast.success("All other sessions revoked")}
             >
-              <Trash2 />
+              <Trash2 className="size-4 mr-1.5" />
               Revoke all other sessions
             </Button>
           </div>

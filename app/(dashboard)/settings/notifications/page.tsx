@@ -26,9 +26,9 @@ function ToggleRow({
   const [checked, setChecked] = React.useState(defaultChecked)
 
   return (
-    <div className="flex items-center justify-between gap-4 py-3">
-      <div className="flex-1 space-y-0.5">
-        <label htmlFor={id} className="text-sm font-medium cursor-pointer">
+    <div className="flex items-start sm:items-center justify-between gap-4 py-3">
+      <div className="flex-1 space-y-0.5 min-w-0">
+        <label htmlFor={id} className="text-sm font-medium cursor-pointer block">
           {title}
         </label>
         {description && (
@@ -39,6 +39,7 @@ function ToggleRow({
         id={id}
         checked={checked}
         onCheckedChange={setChecked}
+        className="shrink-0 mt-0.5 sm:mt-0"
       />
     </div>
   )
@@ -121,6 +122,7 @@ export default function NotificationsSettingsPage() {
       <div className="flex justify-end">
         <Button
           id="save-notifications-button"
+          className="w-full sm:w-auto"
           onClick={() => toast.success("Notification preferences saved.")}
         >
           Save preferences

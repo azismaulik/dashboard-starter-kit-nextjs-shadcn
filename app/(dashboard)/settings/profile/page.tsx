@@ -52,9 +52,9 @@ export default function ProfilePage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center items-start gap-4">
             <UserAvatar name="Ethan Caldwell" size="lg" />
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Button
                 variant="outline"
                 size="sm"
@@ -110,6 +110,7 @@ export default function ProfilePage() {
       <div className="flex justify-end">
         <Button
           id="save-profile-button"
+          className="w-full sm:w-auto"
           onClick={() => toast.success("Profile saved successfully.")}
         >
           Save changes

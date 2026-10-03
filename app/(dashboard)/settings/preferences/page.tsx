@@ -53,7 +53,7 @@ export default function PreferencesPage() {
           <CardDescription>Choose your preferred color theme.</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-3 gap-2 max-w-sm">
+          <div className="grid grid-cols-3 gap-2 max-w-sm w-full">
             {themes.map((t) => (
               <button
                 key={t.value}
@@ -82,7 +82,7 @@ export default function PreferencesPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="max-w-sm space-y-4">
+          <div className="w-full max-w-sm space-y-4">
             <div>
               <FieldLabel htmlFor="language-select">Language</FieldLabel>
               <LanguageSelect
@@ -118,7 +118,11 @@ export default function PreferencesPage() {
       </Card>
 
       <div className="flex justify-end">
-        <Button id="save-preferences-button" onClick={handleSave}>
+        <Button
+          id="save-preferences-button"
+          className="w-full sm:w-auto"
+          onClick={handleSave}
+        >
           Save preferences
         </Button>
       </div>

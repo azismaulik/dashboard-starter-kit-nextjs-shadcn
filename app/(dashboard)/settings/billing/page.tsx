@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -33,7 +32,7 @@ export default function BillingPage() {
         </CardHeader>
         <CardContent>
           <div className="rounded-lg border border-border p-4">
-            <div className="flex items-start justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
               <div>
                 <div className="flex items-center gap-2">
                   <Zap className="size-4 text-primary" />
@@ -53,6 +52,7 @@ export default function BillingPage() {
               <Button
                 variant="outline"
                 size="sm"
+                className="w-full sm:w-auto shrink-0"
                 id="manage-subscription-button"
                 onClick={() => toast.info("Billing portal would open here")}
               >
@@ -89,9 +89,9 @@ export default function BillingPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center justify-between rounded-lg border border-border p-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-lg border border-border p-4">
             <div className="flex items-center gap-3">
-              <div className="flex size-9 items-center justify-center rounded-md border border-border bg-card">
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-md border border-border bg-card">
                 <CreditCard className="size-4 text-muted-foreground" />
               </div>
               <div>
@@ -102,6 +102,7 @@ export default function BillingPage() {
             <Button
               variant="outline"
               size="sm"
+              className="w-full sm:w-auto shrink-0"
               id="update-payment-button"
               onClick={() => toast.info("Payment update dialog would open here")}
             >
@@ -120,15 +121,18 @@ export default function BillingPage() {
         <CardContent className="p-0">
           <div className="divide-y divide-border">
             {invoices.map((inv) => (
-              <div key={inv.id} className="flex items-center justify-between px-6 py-3">
-                <div className="flex items-center gap-3">
-                  <ReceiptText className="size-4 text-muted-foreground" />
-                  <div>
+              <div
+                key={inv.id}
+                className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 px-4 sm:px-6 py-3"
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <ReceiptText className="size-4 shrink-0 text-muted-foreground" />
+                  <div className="min-w-0">
                     <p className="text-sm font-medium">{inv.date}</p>
                     <p className="text-xs text-muted-foreground">{inv.id}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center justify-between sm:justify-end gap-3 pl-7 sm:pl-0 shrink-0">
                   <span className="text-sm font-medium">{formatCurrency(inv.amount)}</span>
                   <Button
                     variant="ghost"
