@@ -40,7 +40,6 @@ import {
   FolderKanban,
   DollarSign,
   TrendingUp,
-  FileText,
   Bell,
   Inbox,
   Search,

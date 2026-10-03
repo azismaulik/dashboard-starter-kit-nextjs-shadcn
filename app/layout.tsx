@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Providers } from "@/components/providers";
+import { siteConfig } from "@/config/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -17,12 +18,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    template: "%s | Dashkit",
-    default: "Dashkit — Next.js SaaS Dashboard Starter Kit",
+    default: `${siteConfig.name} — Next.js SaaS Dashboard Starter Kit`,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "A reusable, production-oriented dashboard foundation for building SaaS products and admin dashboards with Next.js.",
+  description: siteConfig.description,
+  authors: [{ name: siteConfig.author, url: siteConfig.links.github }],
+  creator: siteConfig.author,
+  openGraph: {
+    title: `${siteConfig.name} — Next.js SaaS Dashboard Starter Kit`,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} — Next.js SaaS Dashboard Starter Kit`,
+    description: siteConfig.description,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

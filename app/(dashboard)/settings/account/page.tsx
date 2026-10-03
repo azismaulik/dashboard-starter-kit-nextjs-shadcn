@@ -10,6 +10,7 @@ import {
   CardContent,
 } from "@/components/ui/card"
 import { DeleteConfirmDialog } from "@/components/shared/confirm-dialog"
+import { CopyButton } from "@/components/shared/display"
 import { toast } from "sonner"
 
 export default function AccountPage() {
@@ -33,8 +34,8 @@ export default function AccountPage() {
               <label htmlFor="account-slug" className="mb-1.5 block text-sm font-medium">
                 Workspace URL
               </label>
-              <div className="flex rounded-md border border-input bg-background overflow-hidden">
-                <span className="flex items-center px-3 text-xs text-muted-foreground border-r border-border shrink-0 bg-muted/30">
+              <div className="flex items-center rounded-md border border-input bg-background overflow-hidden pr-1">
+                <span className="flex items-center px-3 text-xs text-muted-foreground border-r border-border shrink-0 bg-muted/30 h-9">
                   dashkit.app/
                 </span>
                 <input
@@ -42,6 +43,7 @@ export default function AccountPage() {
                   defaultValue="acme-corp"
                   className="flex-1 min-w-0 h-9 bg-transparent px-3 text-sm focus:outline-none"
                 />
+                <CopyButton value="https://dashkit.app/acme-corp" />
               </div>
             </div>
             <Button
