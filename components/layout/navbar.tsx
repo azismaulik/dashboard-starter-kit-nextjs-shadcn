@@ -18,20 +18,20 @@ export function Navbar({ className, ...props }: NavbarProps = {}) {
   return (
     <header
       className={cn(
-        "flex h-14 shrink-0 items-center justify-between gap-3 border-b border-border bg-background/95 px-4 backdrop-blur supports-backdrop-filter:bg-background/60 sticky top-0 z-30",
+        "flex h-14 shrink-0 items-center justify-between gap-2 sm:gap-3 border-b border-border bg-background/95 px-3 sm:px-4 backdrop-blur supports-backdrop-filter:bg-background/60 sticky top-0 z-30",
         className,
       )}
       {...props}
     >
       {/* Left section: Sidebar trigger, Separator, Breadcrumb */}
-      <div className="flex items-center gap-2 min-w-0">
-        <SidebarTrigger className="-ml-1 text-muted-foreground hover:text-foreground" />
-        <Separator orientation="vertical" className="h-4" />
-        <BreadcrumbNav />
+      <div className="flex items-center gap-1.5 sm:gap-2 min-w-0 flex-1 sm:flex-initial overflow-hidden">
+        <SidebarTrigger className="-ml-1 text-muted-foreground hover:text-foreground shrink-0" />
+        <Separator orientation="vertical" className="h-4 shrink-0" />
+        <BreadcrumbNav className="min-w-0" />
       </div>
 
       {/* Right section: Search Everything, GitHub link, Theme toggle, Notifications, User menu */}
-      <div className="flex items-center gap-2 shrink-0">
+      <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 shrink-0">
         <SearchTrigger />
         <Separator orientation="vertical" className="hidden sm:block h-4" />
         <Button
@@ -61,7 +61,7 @@ export function Navbar({ className, ...props }: NavbarProps = {}) {
         </Button>
         <ThemeToggle />
         <NotificationBell />
-        <Separator orientation="vertical" className="h-4" />
+        <Separator orientation="vertical" className="hidden sm:block h-4" />
         <UserMenu />
       </div>
     </header>

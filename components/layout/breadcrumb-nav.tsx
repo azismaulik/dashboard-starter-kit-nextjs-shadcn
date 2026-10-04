@@ -57,11 +57,24 @@ export function BreadcrumbNav({ className }: BreadcrumbNavProps) {
     >
       {breadcrumbs.map((crumb, idx) => {
         const isLast = idx === breadcrumbs.length - 1;
+        const isFirst = idx === 0;
+        const hideOnMobile = !isLast && breadcrumbs.length > 2 && isFirst;
 
         return (
-          <div key={crumb.id} className="flex items-center gap-1.5 shrink-0">
+          <div
+            key={crumb.id}
+            className={cn(
+              "flex items-center gap-1.5 shrink-0",
+              hideOnMobile && "hidden sm:flex"
+            )}
+          >
             {idx > 0 && (
-              <ChevronRight className="size-3.5 text-muted-foreground/40 shrink-0" />
+              <ChevronRight
+                className={cn(
+                  "size-3.5 text-muted-foreground/40 shrink-0",
+                  hideOnMobile && "hidden sm:block"
+                )}
+              />
             )}
             {isLast ? (
               <span

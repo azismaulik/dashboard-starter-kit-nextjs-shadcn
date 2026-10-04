@@ -4,7 +4,7 @@ import * as React from "react";
 import { useSidebar } from "@/components/ui/sidebar";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Sparkles } from "lucide-react";
+import { Zap } from "lucide-react";
 import { formatNumber } from "@/lib/utils";
 
 export interface PlanUsageProps {
@@ -35,7 +35,7 @@ export function PlanUsage({
           variant="secondary"
           className="gap-1 bg-primary/10 text-primary hover:bg-primary/20"
         >
-          <Sparkles className="size-2.5" />
+          <Zap className="size-2.5 fill-primary/20" />
           Active
         </Badge>
       </div>

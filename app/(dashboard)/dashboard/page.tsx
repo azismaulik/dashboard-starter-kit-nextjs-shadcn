@@ -46,7 +46,7 @@ import {
   UserPlus,
   Key,
   CreditCard,
-  Sparkles,
+  Zap,
 } from "lucide-react";
 import {
   AreaChart,
@@ -132,19 +132,19 @@ export default function DashboardPage() {
   const [timeRange, setTimeRange] = React.useState("30d");
 
   return (
-    <div className="space-y-6 p-6">
+    <div className="space-y-6 p-4 sm:p-6 lg:p-8">
       {/* Page header with actions & time filters */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h1 className="text-xl font-semibold tracking-tight">
+        <div className="space-y-0.5">
+          <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">
             {getGreeting()}, Ethan 👋
           </h1>
-          <p className="mt-0.5 text-sm text-muted-foreground">
+          <p className="text-xs sm:text-sm text-muted-foreground">
             Here&apos;s what&apos;s happening with your workspace today.
           </p>
         </div>
 
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2 sm:gap-2.5 flex-wrap">
           <Tabs
             value={timeRange}
             onValueChange={(val) => setTimeRange(val ?? "30d")}
@@ -169,43 +169,45 @@ export default function DashboardPage() {
           <DropdownMenu>
             <DropdownMenuTrigger
               render={
-                <Button size="sm" className="gap-1.5">
+                <Button size="sm" className="gap-1.5 shrink-0">
                   <Plus className="size-3.5" />
                   <span>Create</span>
                 </Button>
               }
             />
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent align="end" className="w-56 min-w-52 p-1.5">
               <InviteUserDialog>
                 <button
                   type="button"
-                  className="w-full relative flex cursor-pointer select-none items-center gap-2 rounded-md px-2 py-1.5 text-xs outline-none hover:bg-accent hover:text-accent-foreground text-left"
+                  className="w-full relative flex cursor-pointer select-none items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs font-medium outline-none hover:bg-accent hover:text-accent-foreground text-left whitespace-nowrap"
                 >
-                  <UserPlus className="size-3.5" />
-                  <span>Invite team member</span>
+                  <UserPlus className="size-4 shrink-0 text-muted-foreground" />
+                  <span className="whitespace-nowrap">Invite team member</span>
                 </button>
               </InviteUserDialog>
               <CreateProjectDialog>
                 <button
                   type="button"
-                  className="w-full relative flex cursor-pointer select-none items-center gap-2 rounded-md px-2 py-1.5 text-xs outline-none hover:bg-accent hover:text-accent-foreground text-left"
+                  className="w-full relative flex cursor-pointer select-none items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs font-medium outline-none hover:bg-accent hover:text-accent-foreground text-left whitespace-nowrap"
                 >
-                  <FolderPlus className="size-3.5" />
-                  <span>New project</span>
+                  <FolderPlus className="size-4 shrink-0 text-muted-foreground" />
+                  <span className="whitespace-nowrap">New project</span>
                 </button>
               </CreateProjectDialog>
-              <DropdownMenuSeparator />
+              <DropdownMenuSeparator className="my-1" />
               <DropdownMenuItem
                 onClick={() => toast.info("Opening API keys page...")}
+                className="flex items-center gap-2.5 px-2.5 py-2 text-xs font-medium whitespace-nowrap cursor-pointer"
               >
-                <Key className="mr-2 size-3.5" />
-                <span>API token</span>
+                <Key className="size-4 shrink-0 text-muted-foreground" />
+                <span className="whitespace-nowrap">API token</span>
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() => toast.info("Navigating to billing...")}
+                className="flex items-center gap-2.5 px-2.5 py-2 text-xs font-medium whitespace-nowrap cursor-pointer"
               >
-                <CreditCard className="mr-2 size-3.5" />
-                <span>Add subscription</span>
+                <CreditCard className="size-4 shrink-0 text-muted-foreground" />
+                <span className="whitespace-nowrap">Add subscription</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -274,7 +276,7 @@ export default function DashboardPage() {
           className="group flex items-center gap-3 rounded-2xl border border-border/80 bg-card/85 backdrop-blur-xl p-3.5 text-card-foreground shadow-xs dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] hover:bg-accent/40 hover:border-border hover:shadow-xs transition-all duration-200 cursor-pointer"
         >
           <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-muted/80 text-foreground border border-border/60 shadow-2xs group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary/30 transition-all duration-200">
-            <Sparkles className="size-4" />
+            <Zap className="size-4 fill-current" />
           </div>
           <div className="min-w-0">
             <p className="text-xs font-semibold text-foreground group-hover:text-foreground transition-colors">

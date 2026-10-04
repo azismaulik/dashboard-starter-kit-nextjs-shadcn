@@ -21,7 +21,7 @@ import {
   CreditCard,
   LogOut,
   ChevronDown,
-  Sparkles,
+  Zap,
 } from "lucide-react";
 import { getInitials, cn } from "@/lib/utils";
 
@@ -72,7 +72,7 @@ export function UserMenu({ className }: UserMenuProps) {
               <div className="flex items-center justify-between">
                 <p className="text-xs font-semibold leading-none text-foreground">{user.name}</p>
                 <Badge variant="secondary" className="h-4 gap-1 px-1 text-[9px] font-semibold text-primary">
-                  <Sparkles className="size-2.5" />
+                  <Zap className="size-2.5 fill-primary/20 text-primary" />
                   {user.plan}
                 </Badge>
               </div>
