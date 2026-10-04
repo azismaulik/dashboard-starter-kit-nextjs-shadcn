@@ -37,6 +37,7 @@ export function Navbar({ className, ...props }: NavbarProps = {}) {
         <Button
           variant="ghost"
           size="icon-sm"
+          nativeButton={false}
           className="text-muted-foreground hover:text-foreground hidden sm:inline-flex"
           render={
             <a
