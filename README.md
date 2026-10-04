@@ -4,9 +4,30 @@ A modern, highly accessible, and fully responsive Dashboard Starter Kit built wi
 
 Designed as a versatile, production-ready foundation for any web application — including admin dashboards, client portals, internal tools, CRM, analytics platforms, and SaaS products.
 
-🔗 **GitHub Repository**: [https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn](https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20→-4f46e5?style=for-the-badge&logo=vercel&logoColor=white)](https://dashboard-starter-kit-nextjs-shadcn.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Source%20Code-181717?style=for-the-badge&logo=github)](https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn)
+[![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs)](https://nextjs.org)
+[![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
 
 ---
+
+## 📸 Preview
+
+<table>
+  <tr>
+    <td align="center"><b>Dark Mode</b></td>
+    <td align="center"><b>Light Mode</b></td>
+  </tr>
+  <tr>
+    <td><img src="public/media/screenshots/dashboard-dark.png" alt="Dashboard Dark Mode" /></td>
+    <td><img src="public/media/screenshots/dashboard-light.png" alt="Dashboard Light Mode" /></td>
+  </tr>
+</table>
+
+> 🚀 **[Live Demo → dashboard-starter-kit-nextjs-shadcn.vercel.app](https://dashboard-starter-kit-nextjs-shadcn.vercel.app)**
+
+---
+
 
 ## ✨ Features
 

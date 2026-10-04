@@ -23,6 +23,7 @@ export const siteConfig = {
   author: "Azis Maulik",
   links: {
     github: "https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn",
+    demo: "https://dashboard-starter-kit-nextjs-shadcn.vercel.app",
     docs: "/docs",
   },
   features: {
