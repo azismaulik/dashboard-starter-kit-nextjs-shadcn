@@ -18,9 +18,8 @@ import type { NavGroup, NavItem } from "@/types"
 
 export const siteConfig = {
   name: "Dashkit",
-  description: "A modern, accessible Next.js dashboard starter kit built with shadcn/ui and Tailwind CSS",
+  description: "A modern, accessible, and responsive Next.js dashboard starter kit built with shadcn/ui and Tailwind CSS for any web application",
   url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
-  ogImage: "https://dashkit.dev/og.jpg",
   author: "Azis Maulik",
   links: {
     github: "https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn",

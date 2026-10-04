@@ -2,7 +2,7 @@
 
 A modern, highly accessible, and fully responsive Dashboard Starter Kit built with **Next.js 16 (App Router & Turbopack)**, **React 19**, **Tailwind CSS v4**, and **shadcn/ui**.
 
-Designed as a flexible, production-ready template for SaaS products, admin portals, and web applications.
+Designed as a versatile, production-ready foundation for any web application — including admin dashboards, client portals, internal tools, CRM, analytics platforms, and SaaS products.
 
 🔗 **GitHub Repository**: [https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn](https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn)
 
@@ -28,6 +28,13 @@ Designed as a flexible, production-ready template for SaaS products, admin porta
 
 ## 🚀 Getting Started
 
+### Prerequisites
+
+- **Node.js 20+** (Node 22 LTS recommended) — [Download here](https://nodejs.org)
+- **npm 8+** (comes with Node.js)
+
+> **Note**: This project uses Next.js 16 and React 19 which require Node.js 20 or later. Running on Node.js 14 or 16 will result in errors.
+
 ### 1. Clone the repository
 
 ```bash
@@ -35,7 +42,15 @@ git clone https://github.com/azismaulik/dashboard-starter-kit-nextjs-shadcn.git
 cd dashboard-starter-kit-nextjs-shadcn
 ```
 
-### 2. Install dependencies
+### 2. Set up environment variables
+
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local` to set your `NEXT_PUBLIC_APP_URL` and any other variables as needed.
+
+### 3. Install dependencies
 
 ```bash
 npm install
@@ -47,7 +62,7 @@ yarn install
 bun install
 ```
 
-### 3. Run development server
+### 4. Run development server
 
 ```bash
 npm run dev

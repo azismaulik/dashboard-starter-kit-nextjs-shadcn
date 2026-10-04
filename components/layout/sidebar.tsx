@@ -44,7 +44,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
                   {siteConfig.name}
                 </span>
                 <span className="truncate text-[10px] text-muted-foreground">
-                  SaaS Starter Kit
+                  Dashboard Starter Kit
                 </span>
               </div>
             </SidebarMenuButton>

@@ -20,14 +20,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Next.js SaaS Dashboard Starter Kit`,
+    default: `${siteConfig.name} — Modern Next.js Dashboard Starter Kit`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   authors: [{ name: siteConfig.author, url: siteConfig.links.github }],
   creator: siteConfig.author,
   openGraph: {
-    title: `${siteConfig.name} — Next.js SaaS Dashboard Starter Kit`,
+    title: `${siteConfig.name} — Modern Next.js Dashboard Starter Kit`,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Next.js SaaS Dashboard Starter Kit`,
+    title: `${siteConfig.name} — Modern Next.js Dashboard Starter Kit`,
     description: siteConfig.description,
   },
 };
